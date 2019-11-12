@@ -75,9 +75,8 @@ def gross_per_studio(collection)
     worldwide_gross = 0 
     
      movies_with_director_key(name, movies_collection).each do |studio, studio_name|
-       studio_name[:worldwide_gross].each 
-       
-    
+       studio_name[:worldwide_gross].each do |worldwide_gross, gross_value|
+         
      end
        row_index += 1
   end  
