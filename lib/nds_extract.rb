@@ -81,7 +81,6 @@ def gross_per_studio(collection)
        row_index += 1
   end  
   hash_of_gross_per_studio
-endend 
  new_array
  end
   
