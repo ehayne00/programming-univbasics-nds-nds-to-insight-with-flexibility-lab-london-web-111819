@@ -47,7 +47,7 @@ def movies_with_director_key(name, movies_collection)
    row_index += 1
  end
  first_director_array
-  
+ 
 end
   
   
@@ -68,6 +68,23 @@ end
 
 
 def gross_per_studio(collection)
+  hash_of_gross_per_studio = {}
+  row_index = 0 
+  
+   while row_index < movies_with_director_key.length do 
+   
+     movies_with_director_key[:studio].each_value do |studio_name|
+       hash_of_gross_per_studio[studio_name] 
+       if movies_with_director_key[:studio].group_by |worldwide_gross|
+          movies_with_director_key[worldwide_gross] +=1
+       hash_of_gross_per_studio[studio_name][worldwide_gross] +=1
+    
+     end
+       row_index += 1
+  end  
+  hash_of_gross_per_studio
+end
+      
   # GOAL: Given an Array of Hashes where each Hash represents a movie,
   # return a Hash that includes the total worldwide_gross of all the movies from
   # each studio.
@@ -79,11 +96,9 @@ def gross_per_studio(collection)
   #
   # Hash whose keys are the studio names and whose values are the sum
   # total of all the worldwide_gross numbers for every movie in the input Hash
-end
+
 
 def movies_with_directors_set(source)  
-  
-  new_hash = {}
   new_array = []
     
   row_index = 0
@@ -91,14 +106,17 @@ def movies_with_directors_set(source)
     column_index = 0 
     while column_index < source[row_index][:movies].length
     
-      new_hash[:title] += source[row_index][:movies][column_index][:title]
+     
+      new_array << movies_with_director_key(source[row_index][:name], source[row_index][:movies])
+      
       
       column_index += 1 
+    
     end
     
   row_index +=1 
-  end 
   
+  end 
  new_array
  end
   
