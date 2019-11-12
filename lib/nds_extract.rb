@@ -81,40 +81,7 @@ def gross_per_studio(collection)
        row_index += 1
   end  
   hash_of_gross_per_studio
-end
-      
-  # GOAL: Given an Array of Hashes where each Hash represents a movie,
-  # return a Hash that includes the total worldwide_gross of all the movies from
-  # each studio.
-  #
-  # INPUT:
-  # * collection: Array of Hashes where each Hash where each Hash represents a movie
-  #
-  # RETURN:
-  #
-  # Hash whose keys are the studio names and whose values are the sum
-  # total of all the worldwide_gross numbers for every movie in the input Hash
-
-
-def movies_with_directors_set(source)  
-  new_array = []
-    
-  row_index = 0
-  while row_index < source.length do 
-    column_index = 0 
-    while column_index < source[row_index][:movies].length
-    
-     
-      new_array << movies_with_director_key(source[row_index][:name], source[row_index][:movies])
-      
-      
-      column_index += 1 
-    
-    end
-    
-  row_index +=1 
-  
-  end 
+endend 
  new_array
  end
   
