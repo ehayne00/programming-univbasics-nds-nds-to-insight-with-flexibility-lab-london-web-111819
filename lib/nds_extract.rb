@@ -68,7 +68,7 @@ end
 
 
 def gross_per_studio(collection)
-  hash_of_gross_per_studio = {}
+ 
   row_index = 0 
   worldwide_gross = 0
    while row_index < movies_with_director_key.length do 
