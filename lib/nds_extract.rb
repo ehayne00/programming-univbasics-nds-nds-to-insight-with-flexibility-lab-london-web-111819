@@ -72,7 +72,7 @@ def gross_per_studio(collection)
   row_index = 0 
   worldwide_gross = 0
    while row_index < movies_with_director_key.length do 
-   
+    
      movies_with_director_key.each do |studio, studio_name|
        studio_name[:worldwide_gross] 
        if movies_with_director_key[:studio].group_by |worldwide_gross|
